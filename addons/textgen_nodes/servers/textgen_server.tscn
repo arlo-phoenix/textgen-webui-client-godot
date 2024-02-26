@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://crbvtfwk8ksev"]
+
+[ext_resource type="Script" path="res://addons/textgen_nodes/servers/textgen_server.gd" id="1_ydfu5"]
+[ext_resource type="Script" path="res://addons/textgen_nodes/config/textgen_preset_generation_config.gd" id="2_i1q6y"]
+[ext_resource type="Script" path="res://addons/textgen_nodes/config/textgen_chat_config.gd" id="2_i48bd"]
+
+[sub_resource type="Resource" id="Resource_0d1px"]
+script = ExtResource("2_i1q6y")
+preset = "GeneralMinP"
+max_new_tokens = 0
+truncation_length = 0
+custom_stopping_strings = []
+
+[sub_resource type="Resource" id="Resource_0b6t2"]
+script = ExtResource("2_i48bd")
+instruction_template = "ChatML"
+stream = true
+generation_config = SubResource("Resource_0d1px")
+
+[node name="TextgenServer" type="Node"]
+script = ExtResource("1_ydfu5")
+chat_config = SubResource("Resource_0b6t2")

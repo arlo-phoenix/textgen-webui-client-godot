@@ -1,0 +1,24 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Textgen Webui Client"
+run/main_scene="res://addons/textgen_nodes/example/api_test.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+TextgenServer="*res://addons/textgen_nodes/servers/textgen_server.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/textgen_nodes/plugin.cfg")
