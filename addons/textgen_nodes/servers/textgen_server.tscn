@@ -1,22 +1,49 @@
 [gd_scene load_steps=6 format=3 uid="uid://crbvtfwk8ksev"]
 
 [ext_resource type="Script" path="res://addons/textgen_nodes/servers/textgen_server.gd" id="1_ydfu5"]
-[ext_resource type="Script" path="res://addons/textgen_nodes/config/textgen_preset_generation_config.gd" id="2_i1q6y"]
+[ext_resource type="Script" path="res://addons/textgen_nodes/config/textgen_advanced_generation_config.gd" id="2_2vdbv"]
 [ext_resource type="Script" path="res://addons/textgen_nodes/config/textgen_chat_config.gd" id="2_i48bd"]
 
-[sub_resource type="Resource" id="Resource_0d1px"]
-script = ExtResource("2_i1q6y")
-preset = "GeneralMinP"
+[sub_resource type="Resource" id="Resource_pgkmk"]
+script = ExtResource("2_2vdbv")
+temperature = 0.7
+top_p = 1.0
+min_p = 0.0
+top_k = 40
+repetition_penalty = 1.0
+presence_penalty = 0.0
+frequency_penalty = 2
+repetition_penalty_range = 40
+typical_p = 1.0
+tfs = 3.0
+top_a = 0.9
+epsilon_cutoff = 3.0
+eta_cutoff = 3.0
+guidance_scale = 1.5
+negative_prompt = ""
+penalty_alpha = 0.0
+mirostat_mode = false
+mirostat_tau = 8.0
+mirostat_eta = 0.1
+temperature_last = false
+do_sample = true
+seed = 42
+encoder_repetition_penalty = 1.0
+no_repeat_ngram_size = 0
+min_length = 0
+num_beams = 1
+length_penalty = 0.0
+early_stopping = false
 max_new_tokens = 0
 truncation_length = 0
 custom_stopping_strings = []
 
-[sub_resource type="Resource" id="Resource_0b6t2"]
+[sub_resource type="Resource" id="Resource_fem7s"]
 script = ExtResource("2_i48bd")
 instruction_template = "ChatML"
 stream = true
-generation_config = SubResource("Resource_0d1px")
+generation_config = SubResource("Resource_pgkmk")
 
 [node name="TextgenServer" type="Node"]
 script = ExtResource("1_ydfu5")
-chat_config = SubResource("Resource_0b6t2")
+chat_config = SubResource("Resource_fem7s")
