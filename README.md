@@ -1,4 +1,4 @@
-# Textgen WebUI Client
+# text-generation-webui Client for Godot
 
 This is an openAI compatible client library for [text-generation-webui](https://github.com/oobabooga/text-generation-webui).
 
